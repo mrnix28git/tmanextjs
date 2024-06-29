@@ -1,15 +1,12 @@
-"use client";
 import { useState } from 'react';
-import AddExpense from '../components/AddExpense';
-import AddIncome from '../components/AddIncome';
-import { WalletConnectButton } from '@/components/wallet/connect-button';
+import AddExpense from './AddExpense';
+import AddIncome from './AddIncome';
 
 interface Expense {
   amount: number;
   category: string;
   description: string;
 }
-
 
 interface Income {
   amount: number;
@@ -30,9 +27,6 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">
-      <div>
-        <WalletConnectButton/>
-      </div>
       <h1 className="text-3xl font-bold mb-8">BudgetBuddy</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <AddExpense onAdd={handleAddExpense} />
